@@ -5,7 +5,7 @@
 # Desc -    An attempt at an algorithm that sorts people with computers, attempt 1
 #---------------#
 
-class Computer(object):
+class Computer(object): #Initializes the computer object
     def __init__(self, grouping, number, index):
         self.group = grouping
         self.number = number
@@ -19,15 +19,16 @@ class Computer(object):
     def __repr__(self):
         return self.model + " of grouping " + str(self.index) + ". Occupied: " + str(self.occupied)
 
-    def occupy(self):
+    def occupy(self): # Method to change the occupied variable
         self.occupied = True
 
-    def evict(self):
+    def evict(self): # Method to change the occupied variable
         self.occupied = False
 
 #---------------#
 
 def unoccupySeats(computerList, grouping, computerModel):
+    # To set any computer specified as "unoccupied"
     if computerModel == "all":
         for computer in computerList[grouping]:
             computer.evict()
@@ -36,9 +37,10 @@ def unoccupySeats(computerList, grouping, computerModel):
         for computer in computerList[grouping]:
             if computer.model == computerModel:
                 computer.evict()
-                print("Model " + computer.model + " has been successffuly liberated.")
+                print("Model " + computer.model + " has been successfully liberated.")
 
 def findEqualSeatings(computerList, amount):
+    # To find a row with exactly the amount of computers requested
     print("Looking for entire full computer rows...")
     successfullyOccupied = False
 
@@ -61,6 +63,7 @@ def findEqualSeatings(computerList, amount):
     return "Successfully found a full computer seatment! \n"
 
 def findAdjustedSeatings(computerList, amount):
+    # To find a row with not exactly the correct amount, but with at least the amount requested
     print("Looking for partially filled computer rows...")
     successfullyOccupied = False
     for grouping in range(len(computerList)):
@@ -83,6 +86,7 @@ def findAdjustedSeatings(computerList, amount):
     return findFragmentedSeatings(computerList, amount)
 
 def findFragmentedSeatings(computerList, amount):
+    # To find free computers that may be in random rows
     available = []
     groupings = []
     for grouping in range(len(computerList)):
@@ -105,11 +109,13 @@ def findFragmentedSeatings(computerList, amount):
     return "Couldn't find any computers for you. Sorry!\n"
             
 def checkToOccupy(computer):
+    # Checks if a specified computer is occupied, and returns the placement number
     if computer.occupied == True:
         return True, computer.number     
     return False, computer.number
 
 def occupyComputers(computerList, grouping, amount, mode):
+    # Sets the specified computers as "occupied"
     if mode == "multiple":
         for i in amount:
             computerList[grouping][i].occupy()
@@ -118,8 +124,10 @@ def occupyComputers(computerList, grouping, amount, mode):
 
 #---------------#      
 
+# This is editable, the original computer layout list.
 computerLayout = [["A", "B", "C"], ["A", "B", "C"], ["A", "B"], ["A", "B", "C"], ["A"]]
 
+# Making a list of objects from the original layout list
 computerList = []
 for layout in range(len(computerLayout)):
     tempList = []
@@ -137,7 +145,7 @@ while active:
     if action == "quit":
         active = False
 
-    elif action == "occupy":
+    elif action == "occupy": # Allows people to occupy computers
         validAnswer = False
         while not validAnswer:
             numberOfPeople = int(input("How many computers would you like? "))
@@ -148,17 +156,17 @@ while active:
             
         print(findEqualSeatings(computerList, numberOfPeople))
     
-    elif action == "evict":
+    elif action == "evict": # Eliminate anyone occupying a specified computer
         evictedGrouping = int(input("What grouping would you like to evict? "))
         computerNum = input("Which computer is finished for today? ")
         unoccupySeats(computerList, evictedGrouping, computerNum)
         print("They have been forcefully cleared. \n")
 
-    elif action == "show":
+    elif action == "show": # Shows all computers
         for thing in computerList:
             print(thing)
 
-    elif action == "nuke":
+    elif action == "nuke": # Resets all the computers to "unoccupied"
         for grouping in range(len(computerList)):
             unoccupySeats(computerList, grouping, "all")
         print("They have been forcefully cleared. \n")
