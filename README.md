@@ -1,4 +1,4 @@
-# small-programming-tasks
+# small-projects
 
 A collection of small things that I've made that aren't big enough to be called a "project" of its own.
 Each folder has its own individual READMEs that have more detail, but I'll list them here.
