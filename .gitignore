@@ -1,2 +1,5 @@
-web-scraper/*.env
+# virtual environments
+.env/
+
+# vscode settings
 .vscode/
