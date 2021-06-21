@@ -1,5 +1,11 @@
+# compiled binaries
+*.pyc
+
 # virtual environments
 .env/
 
 # vscode settings
 .vscode/
+
+# like dotenv but easy to import
+secrets.py
