@@ -9,3 +9,6 @@
 
 # like dotenv but easy to import
 secrets.py
+
+Pipfile
+Pipfile.lock
