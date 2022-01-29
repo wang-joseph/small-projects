@@ -1,0 +1,21 @@
+BarrelStrike
+Battlescout ICS-10
+Blaster Stock
+Demolisher
+Evader
+Grip Blaster
+IonFire
+LongStrike
+Mediator
+Mediator Barrel
+Mediator Stock blaster
+Mega Dart Barrel Extension
+Missile Launcher Stock
+Modulus ECS-10
+Recon MKII
+Recon MKIII
+Regulator
+Shadow ICS-6
+StockShot
+Tracker ECS-10
+Tri-Strike
