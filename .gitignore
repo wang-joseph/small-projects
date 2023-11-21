@@ -1,5 +1,6 @@
 # compiled binaries
 *.pyc
+.env
 
 # virtual environments
 .env/
@@ -11,4 +12,4 @@
 secrets.py
 
 Pipfile
-Pipfile.lock
+# Pipfile.lock
