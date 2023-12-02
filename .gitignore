@@ -13,3 +13,6 @@ secrets.py
 
 Pipfile
 # Pipfile.lock
+
+# the hours 
+boost-billable-hours/hours/*
