@@ -16,3 +16,4 @@ Pipfile
 
 # the hours 
 boost-billable-hours/hours/*
+boost-billable-hours/main.ipynb
